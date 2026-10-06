@@ -1,0 +1,4 @@
+masumi
+python-dotenv
+agentmail
+curl_cffi

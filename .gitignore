@@ -1,0 +1,12 @@
+.secrets/
+*.response.json
+__pycache__/
+.venv/
+.env
+.env.*
+!.env.example
+.env.local
+.vercel/
+.vercel
+fixtures/getHotelRoomListOversea.request.json
+fixtures/lodgingPropertyCheckoutPrepareCheckout.request.json
