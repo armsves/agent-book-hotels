@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "action": "search",
+  "destination": "Manila, National Capital Region, Philippines",
+  "check_in": "2026-10-18",
+  "check_out": "2026-10-22",
+  "payment_type": "PAY_LATER",
+  "lodging": null,
+  "heading": "80 properties",
+  "stays": [
+    {
+      "property_id": "112593518",
+      "name": "Sulit Hotel Manila",
+      "price": "$83",
+      "free_cancellation": true,
+      "url": "https://www.hotels.com/ho3603992576/"
+    }
+  ]
+}

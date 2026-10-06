@@ -1,0 +1,62 @@
+{
+  "variables": {
+    "context": {
+      "siteId": 300000001,
+      "locale": "en_US",
+      "eapid": 1,
+      "tpid": 3001,
+      "currency": "USD",
+      "device": {"type": "DESKTOP"},
+      "identity": {
+        "duaid": "58349ba0-30e4-4275-a3bf-118074746312",
+        "authState": "AUTHENTICATED"
+      },
+      "privacyTrackingState": "CAN_TRACK"
+    },
+    "criteria": {
+      "primary": {
+        "dateRange": {
+          "checkInDate": {"day": 18, "month": 10, "year": 2026},
+          "checkOutDate": {"day": 22, "month": 10, "year": 2026}
+        },
+        "destination": {
+          "regionName": "Manila, National Capital Region, Philippines",
+          "regionId": "2375",
+          "coordinates": {"latitude": 14.594503, "longitude": 120.973702},
+          "pinnedPropertyId": null,
+          "propertyIds": null,
+          "mapBounds": null
+        },
+        "rooms": [{"adults": 2, "children": []}]
+      },
+      "secondary": {
+        "counts": [
+          {"id": "resultsStartingIndex", "value": 0},
+          {"id": "resultsSize", "value": 3}
+        ],
+        "booleans": [],
+        "selections": [
+          {"id": "paymentType", "value": "PAY_LATER"},
+          {"id": "privacyTrackingState", "value": "CAN_TRACK"},
+          {"id": "productOffersId", "value": "1a6c95fd-51e2-4c40-8360-15bf47972242"},
+          {"id": "searchId", "value": "26d10401-dc28-479d-a545-8729cd5e7943"},
+          {"id": "sort", "value": "PRICE_LOW_TO_HIGH"},
+          {"id": "useRewards", "value": "SHOP_WITHOUT_POINTS"}
+        ],
+        "ranges": []
+      }
+    },
+    "shoppingContext": {
+      "multiItem": null,
+      "queryTriggeredBy": "FILTER_MODAL_APPLIED",
+      "typeaheadCollationId": null
+    }
+  },
+  "operationName": "PropertyListingQuery",
+  "extensions": {
+    "persistedQuery": {
+      "sha256Hash": "9fe4a0908a10b7068669f9690c19fa4da8103b2b51b5c240bfc1bac9f6fdc2e5",
+      "version": 1
+    }
+  }
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "operationName": "PropertyRatesDateSelectorQuery",
+    "variables": {
+      "context": {
+        "siteId": 300000001,
+        "locale": "en_US",
+        "eapid": 1,
+        "tpid": 3001,
+        "currency": "USD",
+        "device": {"type": "DESKTOP"},
+        "identity": {
+          "duaid": "58349ba0-30e4-4275-a3bf-118074746312",
+          "authState": "AUTHENTICATED"
+        },
+        "privacyTrackingState": "CAN_TRACK"
+      },
+      "eid": "113900859",
+      "dateRange": {
+        "start": {"day": 18, "month": 10, "year": 2026},
+        "end": {"day": 21, "month": 10, "year": 2026}
+      }
+    },
+    "extensions": {
+      "persistedQuery": {
+        "version": 1,
+        "sha256Hash": "63b45017d50764671bb3c69cc3ce6cc0d62319c18acb365b75d91ea237e3da13"
+      }
+    }
+  }
+]

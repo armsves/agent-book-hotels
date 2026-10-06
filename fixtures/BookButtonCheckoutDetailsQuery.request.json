@@ -1,0 +1,27 @@
+[
+  {
+    "operationName": "BookButtonCheckoutDetailsQuery",
+    "variables": {
+      "context": {
+        "siteId": 300000001,
+        "locale": "en_US",
+        "eapid": 1,
+        "tpid": 3001,
+        "currency": "USD",
+        "device": {"type": "DESKTOP"},
+        "identity": {
+          "duaid": "58349ba0-30e4-4275-a3bf-118074746312",
+          "authState": "AUTHENTICATED"
+        },
+        "privacyTrackingState": "CAN_TRACK"
+      },
+      "sessionId": "141ad28a-feb1-4141-a0c7-061c3bfd96a7"
+    },
+    "extensions": {
+      "persistedQuery": {
+        "version": 1,
+        "sha256Hash": "3a34ba00e4857792f310c41dd173a37b1d369a30cdeba6f4b7a52bf15fdb48fa"
+      }
+    }
+  }
+]

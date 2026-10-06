@@ -1,0 +1,102 @@
+{
+  "date": {
+    "dateType": 1,
+    "dateInfo": {
+      "checkInDate": "20261018",
+      "checkOutDate": "20261022"
+    }
+  },
+  "extension": [
+    {"name": "nationality", "value": ""},
+    {"name": "NewLogoTripOnlineFirstImageList", "value": "F"},
+    {"name": "isUserSelectPersonFilter", "value": "T"}
+  ],
+  "destination": {
+    "type": 1,
+    "geo": {"cityId": 364, "countryId": 32},
+    "keyword": {"word": "City of Manila"}
+  },
+  "extraFilter": {
+    "childInfoItems": [],
+    "ctripMainLandBDCoordinate": true,
+    "sessionId": "184ef485db6e417c8fa343d3aa68aabb",
+    "extendableParams": {"tripWalkDriveSwitch": "T"}
+  },
+  "filters": [
+    {"type": "17", "title": "Trip.com recommended", "value": "1", "filterId": "17|1"},
+    {"type": "19", "title": "", "value": "364", "filterId": "19|364"},
+    {"type": "80", "title": "Price per room per night (excl. taxes & fees)", "value": "0", "filterId": "80|0|1"},
+    {"filterId": "29|1", "type": "29", "value": "1|2"}
+  ],
+  "roomQuantity": 1,
+  "marketInfo": {},
+  "benefitBannerInfo": {
+    "hotelBannerInfo": {
+      "activityInfos": [
+        {
+          "iconUrl": "https://dimg04.tripcdn.com/images/1re5712000rnzlak13C2E.png",
+          "title": "Up to 25% off",
+          "activityDesc": "Flyer exclusive deal",
+          "titleColor": "#eb5600",
+          "listCouponColor": "#FF6F0052",
+          "activityType": "Deal"
+        }
+      ],
+      "claimedActivityInfos": [],
+      "userCouponPromotionIds": [],
+      "hasUnclaimedActivity": false,
+      "bannerTitle": "Flyer exclusive!",
+      "btnText": "Show all (1)",
+      "registerActivityInfo": [],
+      "listBg": "https://dimg04.tripcdn.com/images/1re3512000rnzl9kzF3B7.png",
+      "listIcon": "https://dimg04.tripcdn.com/images/1re5712000rnzlak13C2E.png",
+      "realType": "crossUser",
+      "sceneid": "flight",
+      "traceExt": "crosssell.olduser",
+      "showDetailBanner": false,
+      "userCurrentCoins": "170",
+      "inspire": "We'll apply the best discount for you at check-out"
+    },
+    "paymentMethodIcons": []
+  },
+  "paging": {"pageIndex": 1, "pageSize": 10, "pageCode": "10320668148"},
+  "dynamicRefresh": {
+    "tokenList": [
+      "eJw9yLEOwiAUBdB/uTMDPJsCb3ZhsolxMg4NxZRYoKF0aIz/7mI843ljLi0sbgKbvrMnaQRaTGFrY1rBSltFptPGSKsF/Bz8y2UwSFKvpDL45WVv/yWCwBS3dRmPoUYfwNQJ+L3WkP0Bxu16hkAtJbn8LOD74/MFcfsnvg==",
+      "eJw9yLEOgjAUBdB/uXOH9on28WaXTpgYJ+NASg2N0JJSBmL8dxfjGc8bY65hcgOEDw3z0SjUOIe19vMCMbY1xI1l1q1V8GPwL5cgIE0now3jl91W/0sEhSGuy9TvlxJ9gBAp+K2UkPwOwe16hkLJeXbpmSH3x+cLcT4nuw==",
+      "eJw9zL0KwjAUBtB3+eYMuTfF/MwunRTESRxKGmmwSUqaDkV8dxHE9Qznham0MPcjHCnVaUWWBVpMYW1DWuBIW2LTaWOk1QJ+Cv7ZZziw5ANJMvjhaWt/ZYbAGNdlHvZzjT58dwG/1Rqy3+FwvRwhUEtJfX4UuNv9/QGmqigX",
+      "eJw9yLEOwiAUBdB/uTMDj5ICb3bppIlxMg4NxZRYoKF0aIz/7mI843ljLi0swwR2mvqONAm0mMLWxrSCyThSVhtrpTMCfg7+NWQwlFQ9SbL45Xlv/1UKAlPc1mU8LjX6AKZOwO+1huwPMG7XEwRqKWnIzwK+Pz5fiRcn4w==",
+      "eJw9yLEKwjAUBdB/uXOGvEcxyZtdMikUJ3EoaaTBpilpOhTx313EM543ptLi7EcIaWvZEXUKLeW4tSGvEDKO2HbGWu2MQphiePkFAtZ8Ik0Wv7zs7b/MUBjTts7Dca0pRAiTQthrjUs4ILj1ZyjUUrJfngVyf3y+pxUoFw==",
+      "eJw9yLEOwiAUBdB/uTMDUCkPZhemmhgn49BQTIkFGkqHxvjvLsYznjfm0sLiJlijFAnqeoYWU9jamFZYoY2QdNJE3GgGPwf/chkWkstecEH45bC3/0oJhilu6zIelxp9gO0Ug99rDdkfsLhdz2CopSSXnwX2/vh8AZFGJ/c=",
+      "eJw9yL0OwiAUBtB3+WYGLv5cemcXJk2Mk3FoKKbEAg2lQ2N8dxfjGc8bY2lhcgOEmbXekUKLKSytTzOEuCNj92yt7ljBj8G/XIbAaHMkTRa/PK/tv8ZAYYjLPPXbpUYfIHRQ8GutIfsNgtv1BIVaSnL5WSD3x+cLa88nsQ==",
+      "eJw9yLEOgjAUBdB/uXOHvheg5c0unTQxTsaBlBoaKSWlDMT47y7GM543plzD7EYI6dY2XatQYwpbHdIKIdMT28ZYq3uj4KfgX26BgDV3pMnil+e9/pcZCmPc1nk4LiX6AGFS8HspYfEHBLfrCQol5+SWZ4bcH58vbSEnsg==",
+      "eJw9yLEKwjAUBdB/uXOGvEdo0je7ZFIQJ3EoaaTBpilpOhTx313EM543ptLi7EcIacukO+MUWspxa0NeIWR7Ymesc7q3CmGK4eUXCFhzR5ocfnne23+ZoTCmbZ2H41JTiBAyCmGvNS7hgOB2PUGhlpL98iyQ++PzBaTIKBQ=",
+      "eJw9yLEOwiAUBdB/uTMDkOqDN7swaWKcGoeGYkos0FA6NI3/7mI84zkwlRZmN4LtyUgiIoEWU1jbkBawIqu06cgYaUnAT8G/XQZDS31WUhn88rq1/2oNgTGuyzzstxp9AKtOwG+1hux3MB73CwRqKcnlVwH3z88Xkzwn+Q==",
+      "eJw9yLEOwiAUBdB/uTMDYCkPZhemmhgn49BQTIkFGkqHxvjvLsYznjfm0sLiJljV9YbUiTO0mMLWxrTCCm2EpE4TcaMZ/Bz8y2VYSC57wQXhl8Pe/islGKa4rct4XGr0AZYUg99rDdkfsLhdz2CopSSXnwX2/vh8AY+OJ/c=",
+      "eJw9zL0KwjAUBtB3+eYMyUXyc2eXTAriJA4ljTTYJCVNhyK+uwjieobzwlR7nP0I1s4a0gI95bj2IS9gZZwiezBOKyMFwhTD0xcwSJJWUln88LT1vxJBYEzrMg/7uaUQwd82bK3FEnYwrpcjBFqt2ZdHBd/u7w9TdSeH"
+    ]
+  },
+  "head": {
+    "platform": "PC",
+    "cver": "0",
+    "cid": "1736786220410.72cfkUFYn1Ew",
+    "bu": "IBU",
+    "group": "trip",
+    "aid": "742331",
+    "sid": "4137775",
+    "ouid": "ctag.hash.75TWYT5nTPZL",
+    "locale": "en-XX",
+    "timezone": "2",
+    "currency": "USD",
+    "pageId": "10320668148",
+    "vid": "1736786220410.72cfkUFYn1Ew",
+    "guid": "",
+    "isSSR": false,
+    "extension": [
+      {"name": "cityId", "value": "364"},
+      {"name": "checkIn", "value": "2026-10-18"},
+      {"name": "checkOut", "value": "2026-10-22"},
+      {"name": "region", "value": "XX"}
+    ]
+  }
+}

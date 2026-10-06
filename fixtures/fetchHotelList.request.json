@@ -1,0 +1,91 @@
+{
+  "date": {
+    "dateType": 1,
+    "dateInfo": {
+      "checkInDate": "20261013",
+      "checkOutDate": "20261015"
+    }
+  },
+  "extension": [
+    {"name": "nationality", "value": ""},
+    {"name": "NewLogoTripOnlineFirstImageList", "value": "F"},
+    {"name": "isUserSelectPersonFilter", "value": "T"}
+  ],
+  "destination": {
+    "type": 1,
+    "geo": {"cityId": 364, "countryId": 32},
+    "keyword": {"word": "City of Manila"}
+  },
+  "extraFilter": {
+    "childInfoItems": [],
+    "ctripMainLandBDCoordinate": true,
+    "sessionId": "",
+    "extendableParams": {
+      "tripWalkDriveSwitch": "T",
+      "timeStamp": "1791285590221"
+    }
+  },
+  "filters": [
+    {"type": "17", "title": "Trip.com recommended", "value": "1", "filterId": "17|1"},
+    {"type": "19", "title": "", "value": "364", "filterId": "19|364"},
+    {"type": "23", "title": "Free cancellation", "value": "10", "filterId": "23|10"},
+    {"type": "80", "title": "Price per room per night (excl. taxes & fees)", "value": "0", "filterId": "80|0|1"},
+    {"filterId": "29|1", "type": "29", "value": "1|1"}
+  ],
+  "roomQuantity": 1,
+  "marketInfo": {},
+  "benefitBannerInfo": {
+    "hotelBannerInfo": {
+      "activityInfos": [
+        {
+          "iconUrl": "https://dimg04.tripcdn.com/images/1re5712000rnzlak13C2E.png",
+          "title": "Up to 25% off",
+          "activityDesc": "Flyer exclusive deal",
+          "titleColor": "#eb5600",
+          "listCouponColor": "#FF6F0052",
+          "activityType": "Deal"
+        }
+      ],
+      "claimedActivityInfos": [],
+      "userCouponPromotionIds": [],
+      "hasUnclaimedActivity": false,
+      "bannerTitle": "Flyer exclusive!",
+      "btnText": "Show all (1)",
+      "registerActivityInfo": [],
+      "listBg": "https://dimg04.tripcdn.com/images/1re3512000rnzl9kzF3B7.png",
+      "listIcon": "https://dimg04.tripcdn.com/images/1re5712000rnzlak13C2E.png",
+      "realType": "crossUser",
+      "sceneid": "flight",
+      "traceExt": "crosssell.olduser",
+      "showDetailBanner": false,
+      "userCurrentCoins": "170",
+      "inspire": "We'll apply the best discount for you at check-out"
+    },
+    "paymentMethodIcons": []
+  },
+  "paging": {"pageIndex": 1, "pageSize": 10, "pageCode": "10320668148"},
+  "hotelIdFilter": {"hotelAldyShown": []},
+  "head": {
+    "platform": "PC",
+    "cver": "0",
+    "cid": "1736786220410.72cfkUFYn1Ew",
+    "bu": "IBU",
+    "group": "trip",
+    "aid": "742331",
+    "sid": "4137775",
+    "ouid": "ctag.hash.75TWYT5nTPZL",
+    "locale": "en-XX",
+    "timezone": "2",
+    "currency": "USD",
+    "pageId": "10320668148",
+    "vid": "1736786220410.72cfkUFYn1Ew",
+    "guid": "",
+    "isSSR": false,
+    "extension": [
+      {"name": "cityId", "value": ""},
+      {"name": "checkIn", "value": "2026-10-13"},
+      {"name": "checkOut", "value": "2026-10-15"},
+      {"name": "region", "value": "XX"}
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "operationName": "CheckoutBookingDialogQuery",
+    "variables": {
+      "context": {
+        "siteId": 300000001,
+        "locale": "en_US",
+        "eapid": 1,
+        "tpid": 3001,
+        "currency": "USD",
+        "device": {"type": "DESKTOP"},
+        "identity": {
+          "duaid": "58349ba0-30e4-4275-a3bf-118074746312",
+          "authState": "AUTHENTICATED"
+        },
+        "privacyTrackingState": "CAN_TRACK"
+      },
+      "sessionID": "141ad28a-feb1-4141-a0c7-061c3bfd96a7"
+    },
+    "extensions": {
+      "persistedQuery": {
+        "version": 1,
+        "sha256Hash": "3ac7f8632e0583027674b2b62ea136257c8344886e666248d3a85c2ae67005d1"
+      }
+    }
+  }
+]
