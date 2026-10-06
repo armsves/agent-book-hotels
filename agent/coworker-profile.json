@@ -1,0 +1,33 @@
+{
+  "channels": {
+    "email": "armsves@gmail.com"
+  },
+  "profile": {
+    "hosting": "Opens a Hotels.com login window, then searches that account",
+    "capabilities": [
+      "Hotel search",
+      "Pay later",
+      "Free cancellation",
+      "Reservation checkout"
+    ],
+    "examples": [
+      "Reserve a pay-later stay in Manila from 2026-10-18 to 2026-10-22 for 2 adults"
+    ]
+  },
+  "offers": [
+    {
+      "title": "Reserve a pay-later hotel",
+      "category": "Travel",
+      "prompt": "Find the cheapest pay-later Hotels.com stay in Manila from 2026-10-18 to 2026-10-22 for 2 adults with free cancellation, and open the reservation checkout.",
+      "description": "Opens Hotels.com so the traveler can sign in, then searches that account for a free-cancellation pay-later stay and opens checkout for the cheapest match.",
+      "deliverable": "Property name, price, free-cancellation status, and the Hotels.com checkout URL.",
+      "outputs": [
+        {
+          "type": "text",
+          "label": "Sample search",
+          "text": "Sulit Hotel Manila, $83, free cancellation, checkout opened for 18-22 Oct 2026."
+        }
+      ]
+    }
+  ]
+}
