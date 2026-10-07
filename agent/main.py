@@ -11,15 +11,17 @@ import os
 import threading
 import uuid
 from pathlib import Path
+from typing import Annotated
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import Body, FastAPI, HTTPException
 from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, Field
 import uvicorn
 
 from agent.hotels import HotelsError
 from agent.jobs import INPUT_SCHEMA, book_hotel, process_job, search_hotels
+from agent.pay import PaymentError, create_payment_request
 
 ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
@@ -51,9 +53,9 @@ class StartJob(BaseModel):
     input_data: list[JobField] = Field(
         examples=[
             [
-                {"key": "destination", "value": "Boracay"},
-                {"key": "check_in", "value": "2026-10-13"},
-                {"key": "check_out", "value": "2026-10-15"},
+                {"key": "destination", "value": "Manila"},
+                {"key": "check_in", "value": "2026-10-23"},
+                {"key": "check_out", "value": "2026-10-25"},
                 {"key": "adults", "value": "2"},
                 {"key": "payment_type", "value": "PAY_LATER"},
                 {"key": "action", "value": "search"},
@@ -62,28 +64,44 @@ class StartJob(BaseModel):
     )
 
 
+class PaymentInfo(BaseModel):
+    blockchain_identifier: str
+    payment_source_type: str
+    network: str
+    supported_payment_source_index: int
+    amount: str
+    unit: str
+    pay_by_time: str | int | None = None
+    submit_result_time: str | int | None = None
+    on_chain_state: str | None = None
+
+
 class JobResult(BaseModel):
     job_id: str
     identifier_from_seller: str | None = None
     status: str
     output: str | None = None
     message: str | None = None
+    payment: PaymentInfo | None = None
 
 
 class StayQuery(BaseModel):
-    destination: str = Field(examples=["Boracay"])
-    check_in: str = Field(examples=["2026-10-13"], description="YYYY-MM-DD")
-    check_out: str = Field(examples=["2026-10-15"], description="YYYY-MM-DD")
+    destination: str = Field(examples=["Manila"])
+    check_in: str = Field(examples=["2026-10-23"], description="YYYY-MM-DD")
+    check_out: str = Field(examples=["2026-10-25"], description="YYYY-MM-DD")
     adults: int = 2
     payment_type: str = "PAY_LATER"
     lodging: str = Field(default="", description="Optional, for example APART_HOTEL")
 
 
-class BookQuery(StayQuery):
-    property_id: str | None = Field(
-        default=None,
-        description="Hotels.com property id. Omit to use the cheapest free-cancellation stay.",
-    )
+class BookQuery(BaseModel):
+    destination: str = "Manila"
+    check_in: str = Field(default="2026-10-23", description="YYYY-MM-DD")
+    check_out: str = Field(default="2026-10-25", description="YYYY-MM-DD")
+    adults: int = 2
+    payment_type: str = "PAY_LATER"
+    lodging: str = "APART_HOTEL"
+    property_id: str = "113900859"
 
 
 class Stay(BaseModel):
@@ -175,7 +193,27 @@ def create_app() -> FastAPI:
         return _hotels_call(search_hotels, body)
 
     @app.post("/hotels/book", response_model=BookResult, tags=["Hotels"])
-    def hotels_book(body: BookQuery):
+    def hotels_book(
+        body: Annotated[
+            BookQuery,
+            Body(
+                openapi_examples={
+                    "manila": {
+                        "summary": "Open checkout for a Manila stay",
+                        "value": {
+                            "destination": "Manila",
+                            "check_in": "2026-10-23",
+                            "check_out": "2026-10-25",
+                            "adults": 2,
+                            "payment_type": "PAY_LATER",
+                            "lodging": "APART_HOTEL",
+                            "property_id": "113900859",
+                        },
+                    }
+                }
+            ),
+        ],
+    ):
         """Open checkout for a pay-at-property stay. Does not confirm the reservation."""
         return _hotels_call(book_hotel, body)
 
@@ -191,8 +229,9 @@ def create_app() -> FastAPI:
                 values[item["id"]] = item.get("value", item.get("data"))
         if not values.get("destination") or not values.get("check_in") or not values.get("check_out"):
             raise HTTPException(status_code=400, detail="INVALID_INPUT")
+        payment = _payment_request(buyer, values)
         job_id = f"job-{uuid.uuid4()}"
-        JOBS[job_id] = {"status": "running", "buyer": buyer, "input": values}
+        JOBS[job_id] = {"status": "running", "buyer": buyer, "input": values, "payment": payment}
         if os.environ.get("VERCEL"):
             _execute(job_id)
             job = JOBS[job_id]
@@ -201,12 +240,14 @@ def create_app() -> FastAPI:
                 "identifier_from_seller": job_id,
                 "status": job["status"],
                 "output": job.get("output"),
+                "payment": payment,
             }
         threading.Thread(target=_execute, args=(job_id,), daemon=True).start()
         return {
             "job_id": job_id,
             "identifier_from_seller": job_id,
             "status": "running",
+            "payment": payment,
         }
 
     @app.get("/status", response_model=JobResult)
@@ -220,12 +261,22 @@ def create_app() -> FastAPI:
             "status": job["status"],
             "output": job.get("output"),
             "message": job.get("message"),
+            "payment": job.get("payment"),
         }
 
     return app
 
 
-def _hotels_call(run, body: StayQuery):
+def _payment_request(buyer: str, values: dict) -> dict | None:
+    if not (os.environ.get("PAYMENT_API_KEY") and os.environ.get("AGENT_IDENTIFIER")):
+        return None
+    try:
+        return create_payment_request(buyer, values)
+    except PaymentError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+
+def _hotels_call(run, body: StayQuery | BookQuery):
     try:
         return run(body.model_dump())
     except HotelsError as exc:

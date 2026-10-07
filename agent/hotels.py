@@ -154,7 +154,12 @@ def search_stays(
     adults: int = 2,
     payment_type: str = "PAY_LATER",
     lodging: str = "",
+    property_id: str = "",
 ) -> dict:
+    destination = dict(destination)
+    if property_id:
+        destination["pinnedPropertyId"] = property_id
+        destination["propertyIds"] = [property_id]
     selections = [
         {"id": "paymentType", "value": payment_type},
         {"id": "privacyTrackingState", "value": "CAN_TRACK"},

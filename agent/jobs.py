@@ -115,13 +115,20 @@ def _run(input_data: dict) -> dict:
         raise HotelsError("check_out must be after check_in")
     adults = int(input_data.get("adults") or 2)
     payment_type = (input_data.get("payment_type") or "PAY_LATER").strip()
-    lodging = (input_data.get("lodging") or "").strip()
+    lodging = _blank(input_data.get("lodging"))
     action = (input_data.get("action") or "search").strip().lower()
     if action not in {"search", "checkout"}:
         raise HotelsError("action must be search or checkout")
     destination = lookup_city(destination_name)
+    wanted = _blank(input_data.get("property_id"))
     found = search_stays(
-        destination, check_in, check_out, adults, payment_type, lodging
+        destination,
+        check_in,
+        check_out,
+        adults,
+        payment_type,
+        lodging,
+        wanted if action == "checkout" else "",
     )
     stays = [
         stay for stay in found["stays"] if stay["free_cancellation"]
@@ -148,7 +155,6 @@ def _run(input_data: dict) -> dict:
     }
     if action == "search":
         return result
-    wanted = (input_data.get("property_id") or "").strip()
     candidates = stays
     if wanted:
         candidates = [stay for stay in stays if stay["property_id"] == wanted]
@@ -165,6 +171,13 @@ def _run(input_data: dict) -> dict:
             continue
         return result
     raise last_error
+
+
+def _blank(value: str | None) -> str:
+    text = (value or "").strip()
+    if text.lower() in {"", "string", "null", "none"}:
+        return ""
+    return text
 
 
 def _parse_date(value: str | None, name: str) -> date:
